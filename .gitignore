@@ -1,3 +1,8 @@
+# Arquivo do Projeto
+*.Rproj
+/codigos_files
+
+
 # History files
 .Rhistory
 .Rapp.history

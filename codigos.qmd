@@ -1,0 +1,39 @@
+---
+title: "Códigos do Livro R para Ciência de Dados"
+author: Rayane, Thayan , Evaldo
+format: html
+editor: visual
+editor_options:
+  chunk_output_type: console
+---
+
+## Capítulo 1 - Visualização de Daods
+
+```{r}
+#| warning: false
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+library(dados)
+library(ggthemes)
+```
+
+Dados
+
+```{r}
+pinguins
+```
+
+```{r}
+glimpse(pinguins)
+```
+
+### criando um fragico
+
+```{r}
+ggplot(data = pinguins)
+```
+
+## Capítulo 2
