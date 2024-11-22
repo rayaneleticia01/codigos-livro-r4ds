@@ -1,9 +1,16 @@
 ---
 title: "Códigos do Livro R para Ciência de Dados"
 author: Rayane, Thayan , Evaldo
-format: html
-editor: visual
-editor_options:
+date: "`r format(Sys.time(), '%m, %d, %Y')`"
+format:
+  html:
+    toc: true
+    toc-location: left
+    code-fold: true
+    theme: cosmo
+number-sections: true
+lang: pt-BR
+editor_options: 
   chunk_output_type: console
 ---
 
