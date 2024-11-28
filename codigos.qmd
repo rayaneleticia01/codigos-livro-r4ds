@@ -37,10 +37,67 @@ pinguins
 glimpse(pinguins)
 ```
 
-### criando um fragico
+### criando um Gráfico
 
 ```{r}
 ggplot(data = pinguins)
 ```
 
-## Capítulo 2
+```{r}
+#O gráfico a seguir mostra o resultado da adição desses mapeamentos.
+ggplot(
+  data = pinguins,
+  mapping = aes(x = comprimento_nadadeira, y = massa_corporal)
+)
+```
+
+```{r}
+#A função geom_point() adiciona uma camada de pontos ao seu gráfico
+ggplot(
+  data = pinguins,
+  mapping = aes(x = comprimento_nadadeira, y = massa_corporal)
+) +
+  geom_point()
+#> Warning: Removed 2 rows containing missing values or values outside the scale range
+#> (`geom_point()`).
+```
+
+```{r}
+#Para conseguir isso, precisaremos modificar o atributo estético ou a geometria
+ggplot(
+  data = pinguins,
+  mapping = aes(x = comprimento_nadadeira, y = massa_corporal, color = especie)
+) +
+  geom_point()
+```
+
+```{r}
+#Como essa é uma nova geometria que representa nossos dados, adicionaremos uma nova geometria como uma camada sobre o nossa geometria de pontos: geom_smooth(). E especificaremos que queremos desenhar a linha de melhor ajuste com base em um modelo linear (linear model em inglês) com method = "lm".
+
+ggplot(
+  data = pinguins,
+  mapping = aes(x = comprimento_nadadeira, y = massa_corporal, color = especie)
+) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+```{r}
+#Quando os mapeamentos estéticos são definidos em ggplot(), no nível global, eles são passados para cada uma das camadas de geometria (geom) subsequentes do gráfico. Entretanto, cada função geom no ggplot2 também pode receber um argumento mapping, que permite mapeamentos estéticos em nível local que são adicionados àqueles herdados do nível global. Como queremos que os pontos sejam coloridos com base na espécie, mas não queremos que as linhas sejam separadas para eles, devemos especificar color = especie somente para geom_point()
+
+ggplot(
+  data = pinguins,
+  mapping = aes(x = comprimento_nadadeira, y = massa_corporal)
+) +
+  geom_point(mapping = aes(color = especie)) +
+  geom_smooth(method = "lm")
+```
+
+```         
+```
+
+## Capítulo 2 -
+
+```{r}
+
+```
